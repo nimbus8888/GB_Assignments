@@ -5,14 +5,16 @@
 # Каждое слово состоит из латинских букв в нижнем регистре. Сделать вывод исходной строки, но каждое слово
 # должно начинаться с заглавной буквы. Необходимо использовать написанную ранее функцию int_func().
 
-
 def int_func(something):
     return something.title()
 res = int_func('sdjkvn sdijhvfsdijkv')
 print(res)
 
-slova = input('Введите строку с пробелами ').split()
-for h in slova:
+words = input('Введите строку с пробелами ').split()
+for h in words:
     result = int_func(h)
     if result:
-        print(int_func(h), ' ')
+        print(int_func(h), end=' ')
+
+
+# не совсем, необходимо вернуть исходную строку, одной строкой, через for: print() будет выводить каждое слово новой строкой.
