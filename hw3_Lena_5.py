@@ -5,18 +5,27 @@
 # Если специальный символ введен после нескольких чисел, то вначале нужно добавить сумму этих чисел к
 # полученной ранее сумме и после этого завершить программу.
 
-def my_list_sum():
+def my_sum():
     i = 0
     while True:
-        process = input("Введите список  ") #Запрос ввода
-        process = i.split(" ") #Делим по пробелам
-    for num in process:
-        if num == '!!!':
-            return i
-        else:
-            try:
-                i += int(num)
-            except ValueError:
-                print('Все - ')
+        proc = input('Введите число или Exit для выхода: ').split()
+        for num in proc:
+            if num == '%':
+                return i
+            else:
+                try:
+                    i+= int(num)
+                except ValueError:
+                    print('Чтобы выйти из программы нажмите Exit - ')
 
-    print(f'Сумма чисел = {i}')
+        print(f'Сумма чисел = {i}')
+
+
+num = 0
+try:
+    while num != 'Exit':
+        for i in map(int, input('Для выхода наберите Exit Введите числе используя пробел - ').split()):
+            num += i
+        print(num)
+except ValueError:
+    print(num)
