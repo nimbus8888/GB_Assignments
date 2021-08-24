@@ -2,14 +2,19 @@
 # В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 
-def salary():
-    production_per_hour = float(input('Введите выработку в часах - '))
-    rate_per_hour = float(input('Введите ставку в час - '))
-    bonus = float(input('Введите премию - '))
-    return (production_per_hour * rate_per_hour) + bonus
+from sys import argv
 
-result = salary()
-print(result)
+
+def salary():
+    try:
+        production_per_hour, rate_per_hour, bonus = map(float, argv[1:])
+        print(f'Salary = {production_per_hour * rate_per_hour + bonus}')
+    except ValueError:
+        print('Hmmm')
+
+
+salary()
+
 
 
 
