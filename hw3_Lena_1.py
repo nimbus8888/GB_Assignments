@@ -2,9 +2,11 @@
 # Числа запрашивать у пользователя, предусмотреть обработку ситуации деления на ноль
 
 def two(arg_1, arg_2):
+
+
     try:
-        arg_1 = float(input("Первое число: "))
-        arg_2 = float(input("Второе число: "))
+        arg_1 = int(arg_1)
+        arg_2 = int(arg_2)
         two_numbers = arg_1 / arg_2
     except ValueError:
         return 'Ошибка'
