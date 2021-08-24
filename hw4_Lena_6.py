@@ -7,13 +7,16 @@
 # Во втором также необходимо предусмотреть условие, при котором повторение элементов списка будет прекращено.
 from itertools import count, cycle
 
+print()
 for i in count(int(input('Введите первое число -  '))):
     print(i, end=' ')
     exi_t = input()
-    if exi_t == 10:
+    if exi_t == 'e':
         break
 
-my_list = input('Введите список c пробелом: ').split()
+print('Программа повторяет элементы списка. Для генерации следующего повторения необходимо нажать Enter, для выхода',
+      ' из программы нажмите e')
+my_list = input('Введите список c пробелом -').split()
 iter_ = cycle(my_list)
 exi_t = None
 
